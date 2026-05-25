@@ -6,15 +6,16 @@
     <title>egentoo | Exploring the wild, one paw print at a time.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --forest-green: #253912;
+            --deep-canopy: #18250c;
             --charcoal: #232522;
-            --sandstone: #f2ede6;
+            --sandstone-light: #f4eee3;
+            --sandstone-deep: #cca883;
             --shale-blue: #96a5ab;
-            --pine-needles: #877378;
         }
 
         * {
@@ -25,304 +26,69 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--sandstone);
             color: var(--charcoal);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 40px 20px;
             position: relative;
             overflow-x: hidden;
+            
+            /* The Rich Misty Mountain atmospheric gradient from your image */
+            background: linear-gradient(to bottom, 
+                #b2cae0 0%, 
+                var(--sandstone-light) 40%, 
+                var(--sandstone-deep) 100%
+            );
         }
 
-        /* Ambient subtle nature background pattern */
-        body::after {
+        /* Ambient background mist effect */
+        body::before {
             content: "";
             position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" opacity="0.03" fill="%23253912"><path d="M0,800 L120,710 L240,760 L360,640 L480,690 L600,530 L720,610 L840,460 L960,520 L1080,410 L1200,460 L1320,320 L1440,400 L1440,800 Z"/></svg>') no-repeat bottom center;
-            background-size: cover;
-            z-index: -1;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 80% 30%, rgba(255,255,255,0.4) 0%, transparent 60%);
+            z-index: 0;
             pointer-events: none;
         }
 
-        header {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        /* --- LOGO BADGE EMBLEM --- */
-        .brand-emblem-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        /* Combined Mountain and Tree Vector Graphic */
-        .logo-graphic {
-            width: 280px;
-            height: auto;
-            margin-bottom: -5px;
-        }
-
-        /* Main Display Typographic Logo */
-        .logo-text {
-            font-family: 'Cabinet Grotesk', sans-serif;
-            font-size: 4rem;
-            font-weight: 900;
-            letter-spacing: -0.04em;
-            color: var(--forest-green);
-            display: inline-flex;
-            align-items: center;
-            gap: 1px;
-            line-height: 0.85;
-        }
-
-        /* Interlocking Custom Compass Element inside the Text */
-        .logo-compass {
-            display: inline-block;
-            width: 38px;
-            height: 38px;
-            border: 4.5px solid var(--forest-green);
-            border-radius: 50%;
-            position: relative;
-            transform: translateY(3px);
-            margin-left: -2px;
-        }
-
-        /* North Needle */
-        .logo-compass::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-bottom: 12px solid var(--forest-green);
-            transform: translate(-50%, -85%) rotate(45deg);
-        }
-
-        /* South Needle */
-        .logo-compass::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 12px solid var(--shale-blue);
-            transform: translate(-50%, -15%) rotate(45deg);
-        }
-
-        /* Brand Catchphrase Subheader Style */
-        .logo-catchphrase {
-            font-family: 'Cabinet Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--forest-green);
-            margin-top: 15px;
-            opacity: 0.95;
-        }
-
-        /* --- MAIN CONTENT AREA --- */
-        main {
-            max-width: 680px;
-            width: 100%;
-            margin: 50px auto;
-            text-align: center;
-            z-index: 1;
-        }
-
-        .eu-us-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: #ffffff;
-            color: var(--forest-green);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(37, 57, 18, 0.03);
-            border: 1px solid rgba(37, 57, 18, 0.05);
-        }
-
-        .flag {
-            font-size: 1rem;
-            line-height: 1;
-        }
-
-        h1 {
-            font-family: 'Cabinet Grotesk', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            line-height: 1.2;
-            color: var(--forest-green);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.01em;
-        }
-
-        p {
-            font-size: 1.15rem;
-            line-height: 1.65;
-            color: rgba(35, 37, 34, 0.8);
-            margin-bottom: 2.5rem;
-        }
-
-        /* --- INPUT SUBSCRIPTION INTERFACE --- */
-        .form-container {
-            background-color: #ffffff;
-            padding: 8px;
-            border-radius: 100px;
-            box-shadow: 0 15px 35px rgba(37, 57, 18, 0.05);
-            display: flex;
-            border: 1px solid rgba(37, 57, 18, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .form-container:focus-within {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(37, 57, 18, 0.1);
-        }
-
-        input[type="email"] {
-            font-family: inherit;
-            border: none;
-            padding: 16px 24px;
-            font-size: 1.05rem;
-            outline: none;
-            flex-grow: 1;
-            border-radius: 100px;
-            color: var(--charcoal);
-            background: transparent;
-        }
-
-        button {
-            font-family: inherit;
+        /* Top Navigation Bar mimicking your header */
+        nav {
             background-color: var(--forest-green);
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav a {
             color: #ffffff;
-            border: none;
-            padding: 16px 36px;
-            border-radius: 100px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: lowercase;
+            opacity: 0.75;
+            transition: opacity 0.2s ease;
         }
 
-        button:hover {
-            background-color: #16240a;
+        nav a:hover {
+            opacity: 1;
         }
 
-        /* --- RESPONSIVITY LAYOUT --- */
-        @media (max-width: 600px) {
-            .logo-text { font-size: 3.2rem; }
-            .logo-compass { width: 30px; height: 30px; border-width: 3.5px; }
-            .logo-compass::after { border-bottom-width: 10px; }
-            .logo-compass::before { border-top-width: 10px; }
-            .logo-graphic { width: 220px; }
-            .logo-catchphrase { font-size: 1rem; }
-            
-            h1 { font-size: 1.8rem; }
-            p { font-size: 1.05rem; }
-            
-            .form-container {
-                flex-direction: column;
-                background: transparent;
-                box-shadow: none;
-                border: none;
-                padding: 0;
-                gap: 12px;
-            }
-            input[type="email"] {
-                background: white;
-                border: 1px solid rgba(37, 57, 18, 0.12);
-            }
-            button {
-                width: 100%;
-                padding: 18px;
-            }
-        }
-
-        footer {
+        /* Main Container */
+        .wrapper {
+            max-width: 1100px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            font-size: 0.85rem;
-            color: rgba(35, 37, 34, 0.5);
-            letter-spacing: 0.02em;
+            z-index: 2;
         }
-    </style>
-</head>
-<body>
 
-    <header>
-        <div class="brand-emblem-container">
-            <svg class="logo-graphic" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M60 140 L160 50 L220 105 L290 25 L360 110" stroke="#253912" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M120 86 L145 110 L195 65 L225 95" stroke="#253912" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                
-                <path d="M185 140 C 190 120, 210 115, 205 95" stroke="#253912" stroke-width="3.5" stroke-linecap="round"/>
-                
-                <polygon points="50,140 65,100 80,140" fill="#253912"/>
-                <polygon points="70,140 82,90 95,140" fill="#253912"/>
-                <polygon points="85,140 100,105 115,140" fill="#253912"/>
-                
-                <polygon points="285,140 300,95 315,140" fill="#253912"/>
-                <polygon points="305,140 320,85 335,140" fill="#253912"/>
-                <polygon points="325,140 340,105 355,140" fill="#253912"/>
-                
-                <circle cx="218" cy="74" r="5" fill="#253912"/>
-                <circle cx="229" cy="72" r="5" fill="#253912"/>
-                <circle cx="212" cy="85" r="4" fill="#253912"/>
-                <circle cx="235" cy="81" r="4" fill="#253912"/>
-                <path d="M217 93 C215 88, 228 86, 230 91 C231 95, 220 98, 217 93 Z" fill="#253912"/>
-                
-                <path d="M172 82 C168 85, 168 95, 174 96 C178 93, 175 84, 172 82 Z" fill="#253912" opacity="0.8"/>
-                <path d="M178 89 C175 92, 177 99, 182 97 C185 93, 181 87, 178 89 Z" fill="#253912" opacity="0.8"/>
-                
-                <line x1="40" y1="140" x2="360" y2="140" stroke="#253912" stroke-width="4" stroke-linecap="round"/>
-            </svg>
-
-            <div class="logo-text">egent<span class="logo-compass"></span></div>
-            <div class="logo-catchphrase">Exploring the wild, one paw print at a time.</div>
-        </div>
-    </header>
-
-    <main>
-        <div class="eu-us-badge">
-            <span class="flag">🇺🇸</span> Premium US Brands <span class="flag">🇪🇺</span> Shipping Across Europe
-        </div>
-        <h1>Built for the path less traveled.</h1>
-        <p>We are curating heavy-duty, authentic American outdoor and tactical apparel engineered for both you and your loyal canine adventure partners. Our European storefront is opening soon. Sign up below to join the pack for priority launch notifications.</p>
-        
-        <form class="form-container" action="#" method="POST">
-            <input type="email" placeholder="Enter your email address" required aria-label="Email address">
-            <button type="submit">Join the Pack</button>
-        </form>
-    </main>
-
-    <footer>
-        &copy; 2026 egentoo. Premium gear for human & pet expeditions.
-    </footer>
-
-</body>
-</html>
+        /*
