@@ -3,65 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>egentoo | Exploring the wild, one paw print at a time.</title>
-    
+    <title>egentoo | Built for the Wild</title>
+    <!-- Rugged & Clean Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --pine-green: #253912;
+            --charcoal: #232522;
+            --sandstone: #f2ede6;
+            --misty-blue: #96a5ab;
+            --earth-brown: #877378;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--sandstone);
+            color: var(--charcoal);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Background Mountain Graphic Line */
+        body::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: -10%;
+            width: 60%;
+            height: 40%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" opacity="0.08" fill="%23253912"><path d="M0,600 L300,200 L550,450 L800,100 L1000,400 L1000,600 Z"/></svg>') no-repeat bottom right;
+            background-size: contain;
+            z-index: -1;
+        }
+
+        header {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--pine-green);
+            text-transform: lowercase;
+        }
+
+        main {
+            max-width: 650px;
+            width: 100%;
+            margin: 60px auto;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(37, 57, 18, 0.1);
+            color: var(--pine-green);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--pine-green);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: rgba(35, 37, 34, 0.85);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Email Sign-up Interface */
+        .form-container {
+            background-color: #ffffff;
+            padding: 8px;
+            border-radius: 100px;
+            box-shadow: 0 10px 30px rgba(37, 57, 18, 0.06);
+            display: flex;
+            border: 1px solid rgba(37, 57, 18, 0.1);
+        }
+
+        input[type="email"] {
+            font-family: inherit;
+            border: none;
+            padding: 14px 24px;
+            font-size: 1rem;
+            outline: none;
+            flex-grow: 1;
+            border-radius: 100px;
+            color: var(--charcoal);
+        }
+
+        input[type="email"]::placeholder {
+            color: #999;
+        }
+
+        button {
+            font-family: inherit;
+            background-color: var(--pine-green);
+            color: #ffffff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #1a270d;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.5rem; }
+            .form-container {
+                flex-direction: column;
+                background: transparent;
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                gap: 12px;
+            }
+            input[type="email"] {
+                background: white;
+                border: 1px solid rgba(37, 57, 18, 0.15);
+            }
+            button { width: 100%; }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(35, 37, 34, 0.6);
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <svg class="brand-logo-crest" viewBox="0 0 500 170" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M70 150 L195 40 L265 110 L350 15 L435 125" stroke="#253912" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M142 88 L170 115 L235 60 L275 102" stroke="#253912" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            
-            <path d="M230 150 C 235 125, 260 120, 252 98" stroke="#253912" stroke-width="4.5" stroke-linecap="round"/>
-            
-            <polygon points="55,150 72,105 90,150" fill="#253912"/>
-            <polygon points="75,150 90,92 105,150" fill="#253912"/>
-            <polygon points="92,150 110,110 128,150" fill="#253912"/>
-            <polygon points="112,150 125,100 138,150" fill="#253912"/>
-            
-            <polygon points="345,150 362,102 380,150" fill="#253912"/>
-            <polygon points="365,150 382,88 400,150" fill="#253912"/>
-            <polygon points="388,150 405,112 422,150" fill="#253912"/>
-            <polygon points="410,150 425,98 440,150" fill="#253912"/>
-            
-            <circle cx="264" cy="74" r="5.5" fill="#253912"/>
-            <circle cx="277" cy="72" r="5.5" fill="#253912"/>
-            <circle cx="257" cy="85" r="4.5" fill="#253912"/>
-            <circle cx="284" cy="81" r="4.5" fill="#253912"/>
-            <path d="M263 94 C260 88, 275 86, 278 91 C279 96, 267 99, 263 94 Z" fill="#253912"/>
-            
-            <path d="M214 83 C210 86, 210 97, 217 98 C222 95, 218 85, 214 83 Z" fill="#253912"/>
-            <path d="M221 91 C217 94, 219 102, 225 100 C229 95, 224 89, 221 91 Z" fill="#253912"/>
-            
-            <line x1="50" y1="150" x2="450" y2="150" stroke="#253912" stroke-width="5.5" stroke-linecap="round"/>
-        </svg>
-
-        <div class="logo">
-            egent<span class="compass-icon"></span>
-        </div>
-        
-        <div class="tagline">Exploring the wild, one pawprint at a time.</div>
+        <div class="logo">egentoo</div>
     </header>
 
     <main>
-        <div class="badge">🌲 Coming Soon</div>
-        <h1>Built for the path less traveled.</h1>
-        <p>We are curating durable, top-tier outdoor gear tailored for both you and your four-legged trail partners. Our digital outpost is currently being stocked across Europe. Sign up below to join the pack and secure early launch notifications.</p>
+        <div class="badge">🏔️ Authentic US Adventure Brands • Coming to Europe</div>
+        <h1>Exploring the wild, one paw print at a time.</h1>
+        <p>Premium, rugged gear built for both human and pet adventures. We are curating top-tier US outdoor brands and bringing them directly to European trail blazers. Join our waitlist for priority access to our grand opening.</p>
         
+        <!-- Action target left blank. Connect to a service like Formspree.io to collect emails -->
         <form class="form-container" action="#" method="POST">
-            <input type="email" placeholder="Your email address" required aria-label="Email address">
-            <button type="submit">Join the Pack</button>
+            <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+            <button type="submit">Join the Expedition</button>
         </form>
     </main>
 
     <footer>
-        &copy; 2026 egentoo. Built for human & pet adventures.
+        &copy; 2026 egentoo. All rights reserved. 
     </footer>
 
 </body>
