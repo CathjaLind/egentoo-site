@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | egentoo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="thank-you-page">
+
+    <main class="thank-you-content">
+        <h1>You're on the list.</h1>
+        <p>Thanks for joining the pack. We are currently scouting the best gear for your adventures. You’ll be the first to know when we open our digital doors.</p>
+        <a href="index.html" class="button-link">Back to Home</a>
+    </main>
+
+    <style>
+        .thank-you-page { display: flex; align-items: center; justify-content: center; height: 100vh; }
+        .thank-you-content { text-align: center; max-width: 500px; }
+        .button-link { 
+            display: inline-block; 
+            margin-top: 20px; 
+            padding: 16px 36px; 
+            background: var(--forest-green); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 100px; 
+            font-weight: 600; 
+        }
+    </style>
+</body>
+</html>
