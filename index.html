@@ -50,17 +50,24 @@
     </header>
 
     <main>
-        <div class="badge">🌲 Outdoor Gear Brands Available In Europe</div>
-        <h1>Built for the path less traveled.</h1>
-        <p>We are curating durable, top-tier American outdoor gear tailored for both you and your four-legged trail partners. Our shop is opening soon across Europe. Sign up below to join the pack and get early access.</p>
-        
-         <form class="form-container" action="https://formspree.io/f/mredybro" method="POST">
-            <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+      
+      
+        <div id="form-wrapper">
+            <div class="badge">🌲 Outdoor Gear Brands Available In Europe</div>
+            <h1>Built for the path less traveled.</h1>
+            <p>We are curating durable, top-tier American outdoor gear tailored for both you and your four-legged trail partners. Our shop is opening soon across Europe. Sign up below to join the pack and get early access.</p>
             
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAADWJ4G1TgFtica-0"></div>
-            
-            <button type="submit">Join the Pack</button>
-        </form>
+            <form id="my-form" class="form-container" action="https://formspree.io/f/mredybro" method="POST">
+                <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAADWJ4G1TgFtica-0"></div>
+                <button type="submit">Join the Pack</button>
+            </form>
+        </div>
+
+        <div id="success-message" style="display:none; text-align:center; padding: 40px;">
+            <h2>You're on the list!</h2>
+            <p>Thanks for joining the pack. We'll be in touch soon.</p>
+        </div>
     </main>
 
     <footer>
