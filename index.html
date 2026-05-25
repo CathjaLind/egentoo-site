@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>egentoo | Built for the Wild</title>
-    <!-- Rugged & Clean Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -54,22 +53,34 @@
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+        }
+
+        /* Responsive styling for the custom mountain crest logo placement */
+        .brand-crest {
+            width: 100%;
+            max-width: 340px;
+            height: auto;
+            margin-bottom: -10px;
         }
 
         .logo {
             font-family: 'Cabinet Grotesk', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -0.04em;
             color: var(--pine-green);
             text-transform: lowercase;
+            line-height: 1;
         }
 
         main {
             max-width: 650px;
             width: 100%;
-            margin: 60px auto;
+            margin: 50px auto;
             text-align: center;
         }
 
@@ -147,6 +158,12 @@
         }
 
         @media (max-width: 480px) {
+            .brand-crest {
+                max-width: 260px;
+            }
+            .logo {
+                font-size: 2.8rem;
+            }
             h1 { font-size: 2.5rem; }
             .form-container {
                 flex-direction: column;
@@ -173,6 +190,34 @@
 <body>
 
     <header>
+        <svg class="brand-crest" viewBox="0 0 500 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M70 150 L195 40 L265 110 L350 15 L435 125" stroke="#253912" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M142 88 L170 115 L235 60 L275 102" stroke="#253912" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            
+            <path d="M230 150 C 235 125, 260 120, 252 98" stroke="#253912" stroke-width="4.5" stroke-linecap="round"/>
+            
+            <polygon points="55,150 72,105 90,150" fill="#253912"/>
+            <polygon points="75,150 90,92 105,150" fill="#253912"/>
+            <polygon points="92,150 110,110 128,150" fill="#253912"/>
+            <polygon points="112,150 125,100 138,150" fill="#253912"/>
+            
+            <polygon points="345,150 362,102 380,150" fill="#253912"/>
+            <polygon points="365,150 382,88 400,150" fill="#253912"/>
+            <polygon points="388,150 405,112 422,150" fill="#253912"/>
+            <polygon points="410,150 425,98 440,150" fill="#253912"/>
+            
+            <circle cx="264" cy="74" r="5.5" fill="#253912"/>
+            <circle cx="277" cy="72" r="5.5" fill="#253912"/>
+            <circle cx="257" cy="85" r="4.5" fill="#253912"/>
+            <circle cx="284" cy="81" r="4.5" fill="#253912"/>
+            <path d="M263 94 C260 88, 275 86, 278 91 C279 96, 267 99, 263 94 Z" fill="#253912"/>
+            
+            <path d="M214 83 C210 86, 210 97, 217 98 C222 95, 218 85, 214 83 Z" fill="#253912"/>
+            <path d="M221 91 C217 94, 219 102, 225 100 C229 95, 224 89, 221 91 Z" fill="#253912"/>
+            
+            <line x1="50" y1="150" x2="450" y2="150" stroke="#253912" stroke-width="5.5" stroke-linecap="round"/>
+        </svg>
+
         <div class="logo">egentoo</div>
     </header>
 
@@ -181,7 +226,6 @@
         <h1>Exploring the wild, one paw print at a time.</h1>
         <p>Premium, rugged gear built for both human and pet adventures. We are curating top-tier US outdoor brands and bringing them directly to European trail blazers. Join our waitlist for priority access to our grand opening.</p>
         
-        <!-- Action target left blank. Connect to a service like Formspree.io to collect emails -->
         <form class="form-container" action="#" method="POST">
             <input type="email" placeholder="Enter your email address" required aria-label="Email address">
             <button type="submit">Join the Expedition</button>
