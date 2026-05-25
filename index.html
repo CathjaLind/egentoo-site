@@ -20,12 +20,25 @@
 <body>
 
     <main>
-        <form class="form-container" action="https://formspree.io/f/mredybro" method="POST">
-            <input type="email" name="email" placeholder="Enter your email address" required>
+ 
+<form
+  action="https://formspree.io/f/mredybro"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email" placeholder="Enter your email address" required>
+  </label>
+
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAADWJ4G1TgFtica-0"></div>
             
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAADWJ4G1TgFtica-0"></div>
-            
-            <button type="submit">Join the Expedition</button>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Join the Expedition</button>
+</form>
         </form>
     </main>
 
